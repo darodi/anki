@@ -1,19 +1,45 @@
-Anki
+Anki testing for N900
 -------------------------------------
+
+Disclaimer:
+-------------
+This is an attempt to run the last anki version on N900.
+This port/install is still not complete. Use it at your own risk.
+Still to do: avoid sync problems, minor display changes
+
+For a more usable and stable version, please follow this post:
+http://talk.maemo.org/showthread.php?p=1326179
+
+
 
 Prerequisites
 ---------------
 
-To install the prerequisites on Ubuntu/Debian, please use the following
-command:
+To install the prerequisites on N900, please use the following
+commands:
 
-sudo apt-get install python-qt4 mplayer lame libportaudio2 python-sqlalchemy
+	sudo gainroot
+    apt-get install python2.5-qt4 mplayer lame libportaudio2 python-sqlalchemy
+    cd /home/user
+    mkdir /home/user/MyDocs/.anki
+    mkdir /home/user/MyDocs/Anki
+    ln -s /home/user/MyDocs/.anki .anki
+    ln -s /home/user/MyDocs/Anki Anki
+	
+add this repository HAM/apt:
+deb http://repository.maemo.org/ fremantle/sdk free non-free
 
-If you're on another distribution the packages may be named differently, so
-please consult your package manager.
+Then continue with the commands:
 
-Your Python version will need to be 2.6 or 2.7 (not 3+), and both Qt and PyQt
-need to be 4.7 or later.
+    apt-get install libssl-dev python-dev libbluetooth3-dev gcc libc6-dev python-setuptools
+    easy_install pip
+    pip install ssl
+    apt-get autoremove --purge libssl-dev python-dev libbluetooth3-dev libc6-dev
+
+don't forget to remove the repository in HAM/apt
+
+
+
 
 Installation & Running
 ------------------------
@@ -22,13 +48,12 @@ Anki does not need installing, and can be run from the directory it is
 extracted to. If you extracted it to ~/anki-2.0 for example, you can run Anki
 by simply typing ~/anki-2.0/runanki in a terminal.
 
-If you'd like to install it system wide, change to the folder you extracted it
-to, and run 'sudo make install'. If you need to uninstall Anki in the future,
-you can do so by typing 'sudo make uninstall'.
+
 
 More information
 -----------------
 
 For more information and the latest version, please see the website at:
+
 
 http://ankisrs.net/
