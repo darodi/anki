@@ -191,7 +191,7 @@ function _typeAnsPress() {
         # grab the question and play audio
         if c.isEmpty():
             q = _("""\
-The front of this card is empty. Please run Tools>Maintenance>Empty Cards.""")
+The front of this card is empty. Please run Tools>Empty Cards.""")
         else:
             q = c.q()
         if self.autoplay(c):
@@ -437,7 +437,11 @@ Please run Tools>Empty Cards""")
         # compare in NFC form so accents appear correct
         given = ucd.normalize("NFC", given)
         correct = ucd.normalize("NFC", correct)
-        s = difflib.SequenceMatcher(None, given, correct, autojunk=False)
+        try:
+            s = difflib.SequenceMatcher(None, given, correct, autojunk=False)
+        except:
+            # autojunk was added in python 2.7.1
+            s = difflib.SequenceMatcher(None, given, correct)
         givenElems = []
         correctElems = []
         givenPoint = 0
@@ -693,6 +697,7 @@ function showAnswer(txt) {
             a = m.addAction(label)
             a.setShortcut(QKeySequence(scut))
             a.connect(a, SIGNAL("triggered()"), func)
+        runHook("Reviewer.contextMenuEvent",self,m)
         m.exec_(QCursor.pos())
 
     def onOptions(self):
