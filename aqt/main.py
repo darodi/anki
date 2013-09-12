@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 # License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
 
+from __future__ import with_statement
 import os, sys, re, traceback, signal
 import  zipfile
 from send2trash import send2trash

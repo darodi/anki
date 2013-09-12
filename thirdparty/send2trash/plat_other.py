@@ -20,7 +20,7 @@ import os.path as op
 from datetime import datetime
 import stat
 from urllib import quote
-from io import open
+#from io import open
 
 FILES_DIR = u'files'
 INFO_DIR = u'info'
