@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'designer/modelopts.ui'
 #
-# Created: Fri Jun 14 23:31:57 2013
+# Created: Fri Sep 13 18:19:40 2013
 #      by: PyQt4 UI code generator 4.7.3
 #
 # WARNING! All changes made in this file will be lost!

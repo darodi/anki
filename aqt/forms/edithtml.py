@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'designer/edithtml.ui'
 #
-# Created: Fri Jun 14 23:31:51 2013
+# Created: Fri Sep 13 18:19:30 2013
 #      by: PyQt4 UI code generator 4.7.3
 #
 # WARNING! All changes made in this file will be lost!
